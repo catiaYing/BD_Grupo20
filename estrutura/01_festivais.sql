@@ -1,8 +1,6 @@
-SET search_path TO catia_schema;
-
 -- 1. Tabela Festival
 -- Selecionar o schema correto
-SET search_path TO yifei_schema;
+SET search_path TO catia_schema;
 CREATE TABLE Festival (
     nome VARCHAR(100) NOT NULL,
     ano_criacao INTEGER NOT NULL,

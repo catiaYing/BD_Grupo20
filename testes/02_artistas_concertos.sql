@@ -1,5 +1,6 @@
 -- RIA-2: hora_inicio deve ser anterior a hora_fim
 -- Resultado esperado: ERRO
+SET search_path TO catia_schema;
 
 INSERT INTO Concerto (
     id_concerto,
@@ -14,19 +15,13 @@ VALUES (
     100,
     '22:00',
     '20:00',
-    'tianzi',
+    'NOS Alive',
     2026,
     '2026-07-09',
     'Ana Moura'
 );
-
-
 -- RIA-3: tipo deve ser 'artista' ou 'grupo'
 -- Resultado esperado: ERRO
 
 INSERT INTO Artista (nome, genero_musical, tipo)
-VALUES (
-    'Artista Teste',
-    'Pop',
-    'banda'
-);
+VALUES ('Artista Teste', 'Pop', 'banda');

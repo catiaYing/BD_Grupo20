@@ -2,7 +2,7 @@
 -- 01 - DADOS DOS FESTIVAIS
 -- ==================================================
 
-
+SET search_path TO catia_schema;
 -- 1. Festival
 
 INSERT INTO Festival (nome, ano_criacao)
