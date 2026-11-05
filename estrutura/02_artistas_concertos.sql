@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 -- Tabela Artista
 -- RIA-3: tipo só pode ser artista ou grupo
+=======
+>>>>>>> origin/main
 
 CREATE TABLE Artista (
     nome VARCHAR(100) NOT NULL,
@@ -14,8 +17,16 @@ CREATE TABLE Artista (
 );
 
 
+<<<<<<< HEAD
 -- Tabela Concerto
 -- RIA-2: hora_inicio < hora_fim
+=======
+-- =========================================
+-- 2. Tabela Concerto
+-- RIA-2: A hora de início deve ser anterior
+-- à hora de fim
+-- =========================================
+>>>>>>> origin/main
 
 CREATE TABLE Concerto (
     id_concerto INTEGER NOT NULL,
@@ -45,4 +56,8 @@ CREATE TABLE Concerto (
 
     CONSTRAINT ck_concerto_horas
         CHECK (hora_inicio < hora_fim)
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> origin/main
