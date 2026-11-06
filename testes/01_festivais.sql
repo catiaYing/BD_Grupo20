@@ -3,18 +3,13 @@
 
 
 -- Teste 1: PRIMARY KEY Festival
--- Erro esperado: duplicate key violates
--- unique constraint "pk_festival"
 SET search_path TO yifei_schema;
 INSERT INTO Festival (nome, ano_criacao)
 VALUES ('Sons do Tejo', 2014);
 
 
--- ==================================================
--- Teste 2: CHECK Recinto
--- Erro esperado: violates check constraint
--- "ck_recinto_capacidade"
 
+-- Teste 2: CHECK Recinto
 INSERT INTO Recinto (
     nome,
     capacidade_max
@@ -27,9 +22,6 @@ VALUES (
 
 -- ==================================================
 -- Teste 3: FOREIGN KEY Edicao -> Festival
--- Erro esperado: violates foreign key constraint
--- "fk_edicao_festival"
-
 INSERT INTO Edicao (
     nome_festival,
     ano,
@@ -46,8 +38,6 @@ VALUES (
 
 -- ==================================================
 -- Teste 4: FOREIGN KEY Edicao -> Recinto
--- Erro esperado: violates foreign key constraint
--- "fk_edicao_recinto"
 
 INSERT INTO Edicao (
     nome_festival,
@@ -65,8 +55,6 @@ VALUES (
 
 -- ==================================================
 -- Teste 5: CHECK Edicao
--- Erro esperado: violates check constraint
--- "ck_edicao_preco"
 
 INSERT INTO Edicao (
     nome_festival,
@@ -84,9 +72,6 @@ VALUES (
 
 -- ==================================================
 -- Teste 6: FOREIGN KEY Dia -> Edicao
--- Erro esperado: violates foreign key constraint
--- "fk_dia_edicao"
-
 INSERT INTO Dia (
     nome_festival,
     ano_edicao,
@@ -103,8 +88,6 @@ VALUES (
 
 -- ==================================================
 -- Teste 7: CHECK Dia
--- Erro esperado: violates check constraint
--- "ck_dia_preco"
 
 INSERT INTO Dia (
     nome_festival,
