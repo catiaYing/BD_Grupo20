@@ -1,20 +1,19 @@
 
 -- ==================================================
 -- 01 - TESTES DOS FESTIVAIS
+-- Projeto E2 - Bases de Dados 2026/2027
 -- ==================================================
+
+SET search_path TO yifei_schema;
 
 
 -- Teste 1: PRIMARY KEY Festival
--- Erro esperado: duplicate key violates
--- unique constraint "pk_festival"
-SET search_path TO yifei_schema;
+
 INSERT INTO Festival (nome, ano_criacao)
-VALUES ('NOS Alive', 2007);
+VALUES ('Sons do Tejo', 2014);
 
 
 -- Teste 2: CHECK Recinto
--- Erro esperado: violates check constraint
--- "ck_recinto_capacidade"
 
 INSERT INTO Recinto (
     nome,
@@ -27,8 +26,6 @@ VALUES (
 
 
 -- Teste 3: FOREIGN KEY Edicao -> Festival
--- Erro esperado: violates foreign key constraint
--- "fk_edicao_festival"
 
 INSERT INTO Edicao (
     nome_festival,
@@ -38,15 +35,13 @@ INSERT INTO Edicao (
 )
 VALUES (
     'Festival Inexistente',
-    2026,
+    2027,
     100.00,
-    'Parque Tejo'
-);
+    'Parque Ribeirinho'
+); 
 
 
 -- Teste 4: FOREIGN KEY Edicao -> Recinto
--- Erro esperado: violates foreign key constraint
--- "fk_edicao_recinto"
 
 INSERT INTO Edicao (
     nome_festival,
@@ -55,16 +50,14 @@ INSERT INTO Edicao (
     nome_recinto
 )
 VALUES (
-    'NOS Alive',
-    2027,
+    'Sons do Tejo',
+    2028,
     100.00,
     'Recinto Inexistente'
 );
 
 
 -- Teste 5: CHECK Edicao
--- Erro esperado: violates check constraint
--- "ck_edicao_preco"
 
 INSERT INTO Edicao (
     nome_festival,
@@ -73,16 +66,14 @@ INSERT INTO Edicao (
     nome_recinto
 )
 VALUES (
-    'NOS Alive',
-    2027,
+    'Sons do Tejo',
+    2028,
     0,
-    'Passeio Maritimo de Alges'
+    'Parque Ribeirinho'
 );
 
 
 -- Teste 6: FOREIGN KEY Dia -> Edicao
--- Erro esperado: violates foreign key constraint
--- "fk_dia_edicao"
 
 INSERT INTO Dia (
     nome_festival,
@@ -92,15 +83,13 @@ INSERT INTO Dia (
 )
 VALUES (
     'Festival Inexistente',
-    2026,
-    '2026-07-12',
+    2027,
+    '2027-07-12',
     50.00
 );
 
 
 -- Teste 7: CHECK Dia
--- Erro esperado: violates check constraint
--- "ck_dia_preco"
 
 INSERT INTO Dia (
     nome_festival,
@@ -109,8 +98,8 @@ INSERT INTO Dia (
     preco_diario
 )
 VALUES (
-    'NOS Alive',
-    2026,
-    '2026-07-12',
+    'Sons do Tejo',
+    2027,
+    '2027-06-21',
     0
 );
