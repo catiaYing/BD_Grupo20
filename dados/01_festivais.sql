@@ -1,5 +1,3 @@
-
--- ==================================================
 -- 01 - DADOS DOS FESTIVAIS
 -- Projeto E2 - Bases de Dados 2026/2027
 -- ==================================================
@@ -76,7 +74,6 @@ VALUES
     ('Sons do Tejo', 2027, 105.00, 'Parque Ribeirinho'),
     ('Luz do Atlantico', 2027, 138.00, 'Quinta das Fontes'),
     ('Ritmos da Serra', 2027, 89.00, 'Parque da Serra');
-
 
 -- ==================================================
 -- 4. Dia
