@@ -1,6 +1,6 @@
 -- RIA-2: hora_inicio deve ser anterior a hora_fim
 -- Resultado esperado: ERRO
-SET search_path TO catia_schema;
+
 
 INSERT INTO Concerto (
     id_concerto,

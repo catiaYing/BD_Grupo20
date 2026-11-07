@@ -1,9 +1,4 @@
-
-SET search_path TO catia_schema;
-
--- ==================================================
 -- Dados da tabela Artista
--- ==================================================
 
 INSERT INTO Artista (nome, genero_musical, tipo)
 VALUES
@@ -21,9 +16,7 @@ VALUES
     ('Burna Boy', 'Afrobeats', 'artista');
 
 
--- ==================================================
 -- Dados da tabela Concerto
--- ==================================================
 
 INSERT INTO Concerto (
     id_concerto,
