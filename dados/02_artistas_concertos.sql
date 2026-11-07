@@ -1,5 +1,9 @@
+
 SET search_path TO catia_schema;
+
+-- ==================================================
 -- Dados da tabela Artista
+-- ==================================================
 
 INSERT INTO Artista (nome, genero_musical, tipo)
 VALUES
@@ -17,7 +21,10 @@ VALUES
     ('Burna Boy', 'Afrobeats', 'artista');
 
 
+-- ==================================================
 -- Dados da tabela Concerto
+-- ==================================================
+
 INSERT INTO Concerto (
     id_concerto,
     hora_inicio,
@@ -29,56 +36,54 @@ INSERT INTO Concerto (
 )
 VALUES
 
--- NOS Alive - 09/07/2026
-    (1, '16:00', '17:00', 'NOS Alive', 2026, '2026-07-09', 'Ana Moura'),
-    (2, '17:30', '18:30', 'NOS Alive', 2026, '2026-07-09', 'Calema'),
-    (3, '19:00', '20:00', 'NOS Alive', 2026, '2026-07-09', 'Dua Lipa'),
-    (4, '21:00', '23:00', 'NOS Alive', 2026, '2026-07-09', 'Coldplay'),
+-- Sons do Tejo - Edicao 2026
+(1, '16:00', '17:00', 'Sons do Tejo', 2026, '2026-06-19', 'Ana Moura'),
+(2, '17:30', '18:30', 'Sons do Tejo', 2026, '2026-06-19', 'Calema'),
+(3, '19:00', '20:00', 'Sons do Tejo', 2026, '2026-06-19', 'Dua Lipa'),
 
--- NOS Alive - 10/07/2026
-    (5, '16:00', '17:00', 'NOS Alive', 2026, '2026-07-10', 'Mariza'),
-    (6, '17:30', '18:30', 'NOS Alive', 2026, '2026-07-10', 'Ed Sheeran'),
-    (7, '19:00', '20:00', 'NOS Alive', 2026, '2026-07-10', 'Burna Boy'),
-    (8, '21:00', '23:00', 'NOS Alive', 2026, '2026-07-10', 'The Weeknd'),
+(4, '21:00', '23:00', 'Sons do Tejo', 2026, '2026-06-20', 'Coldplay'),
+(5, '16:00', '17:00', 'Sons do Tejo', 2026, '2026-06-20', 'Mariza'),
+(6, '17:30', '18:30', 'Sons do Tejo', 2026, '2026-06-20', 'Ed Sheeran'),
 
--- NOS Alive - 11/07/2026
-    (9, '16:00', '17:00', 'NOS Alive', 2026, '2026-07-11', 'Carolina Deslandes'),
-    (10, '17:30', '18:30', 'NOS Alive', 2026, '2026-07-11', 'Xutos & Pontapes'),
-    (11, '19:00', '20:00', 'NOS Alive', 2026, '2026-07-11', 'Billie Eilish'),
-    (12, '21:00', '23:00', 'NOS Alive', 2026, '2026-07-11', 'Imagine Dragons'),
+(7, '19:00', '20:00', 'Sons do Tejo', 2026, '2026-06-21', 'Burna Boy'),
+(8, '21:00', '23:00', 'Sons do Tejo', 2026, '2026-06-21', 'The Weeknd'),
+(9, '16:00', '17:00', 'Sons do Tejo', 2026, '2026-06-21', 'Carolina Deslandes'),
 
--- Rock in Rio - 20/06/2026
-    (13, '16:00', '17:00', 'Rock in Rio', 2026, '2026-06-20', 'Dua Lipa'),
-    (14, '17:30', '18:30', 'Rock in Rio', 2026, '2026-06-20', 'Calema'),
-    (15, '19:00', '20:00', 'Rock in Rio', 2026, '2026-06-20', 'The Weeknd'),
-    (16, '21:00', '23:00', 'Rock in Rio', 2026, '2026-06-20', 'Coldplay'),
+-- Sons do Tejo - Edicao 2027
+(10, '17:30', '18:30', 'Sons do Tejo', 2027, '2027-06-18', 'Xutos & Pontapes'),
+(11, '19:00', '20:00', 'Sons do Tejo', 2027, '2027-06-18', 'Billie Eilish'),
+(12, '21:00', '23:00', 'Sons do Tejo', 2027, '2027-06-18', 'Imagine Dragons'),
 
--- Rock in Rio - 21/06/2026
-    (17, '16:00', '17:00', 'Rock in Rio', 2026, '2026-06-21', 'Ana Moura'),
-    (18, '17:30', '18:30', 'Rock in Rio', 2026, '2026-06-21', 'Burna Boy'),
-    (19, '19:00', '20:00', 'Rock in Rio', 2026, '2026-06-21', 'Ed Sheeran'),
-    (20, '21:00', '23:00', 'Rock in Rio', 2026, '2026-06-21', 'Imagine Dragons'),
+(13, '16:00', '17:00', 'Sons do Tejo', 2027, '2027-06-19', 'Dua Lipa'),
+(14, '17:30', '18:30', 'Sons do Tejo', 2027, '2027-06-19', 'Calema'),
+(15, '19:00', '20:00', 'Sons do Tejo', 2027, '2027-06-19', 'The Weeknd'),
 
--- Rock in Rio - 27/06/2026
-    (21, '16:00', '17:00', 'Rock in Rio', 2026, '2026-06-27', 'Mariza'),
-    (22, '17:30', '18:30', 'Rock in Rio', 2026, '2026-06-27', 'Carolina Deslandes'),
-    (23, '19:00', '20:00', 'Rock in Rio', 2026, '2026-06-27', 'Billie Eilish'),
-    (24, '21:00', '23:00', 'Rock in Rio', 2026, '2026-06-27', 'Xutos & Pontapes'),
+(16, '21:00', '23:00', 'Sons do Tejo', 2027, '2027-06-20', 'Coldplay'),
+(17, '16:00', '17:00', 'Sons do Tejo', 2027, '2027-06-20', 'Ana Moura'),
+(18, '17:30', '18:30', 'Sons do Tejo', 2027, '2027-06-20', 'Burna Boy'),
 
--- Primavera Sound - 11/06/2026
-    (25, '16:00', '17:00', 'Primavera Sound', 2026, '2026-06-11', 'The Weeknd'),
-    (26, '17:30', '18:30', 'Primavera Sound', 2026, '2026-06-11', 'Ana Moura'),
-    (27, '19:00', '20:00', 'Primavera Sound', 2026, '2026-06-11', 'Imagine Dragons'),
-    (28, '21:00', '23:00', 'Primavera Sound', 2026, '2026-06-11', 'Dua Lipa'),
+-- Luz do Atlantico - Edicao 2027
+(19, '19:00', '20:00', 'Luz do Atlantico', 2027, '2027-07-02', 'Ed Sheeran'),
+(20, '21:00', '23:00', 'Luz do Atlantico', 2027, '2027-07-02', 'Imagine Dragons'),
+(21, '16:00', '17:00', 'Luz do Atlantico', 2027, '2027-07-03', 'Mariza'),
 
--- Primavera Sound - 12/06/2026
-    (29, '16:00', '17:00', 'Primavera Sound', 2026, '2026-06-12', 'Calema'),
-    (30, '17:30', '18:30', 'Primavera Sound', 2026, '2026-06-12', 'Mariza'),
-    (31, '19:00', '20:00', 'Primavera Sound', 2026, '2026-06-12', 'Burna Boy'),
-    (32, '21:00', '23:00', 'Primavera Sound', 2026, '2026-06-12', 'Coldplay'),
+(22, '17:30', '18:30', 'Luz do Atlantico', 2027, '2027-07-03', 'Carolina Deslandes'),
+(23, '19:00', '20:00', 'Luz do Atlantico', 2027, '2027-07-03', 'Billie Eilish'),
+(24, '21:00', '23:00', 'Luz do Atlantico', 2027, '2027-07-03', 'Xutos & Pontapes'),
 
--- Primavera Sound - 13/06/2026
-    (33, '16:00', '17:00', 'Primavera Sound', 2026, '2026-06-13', 'Ed Sheeran'),
-    (34, '17:30', '18:30', 'Primavera Sound', 2026, '2026-06-13', 'Carolina Deslandes'),
-    (35, '19:00', '20:00', 'Primavera Sound', 2026, '2026-06-13', 'Billie Eilish'),
-    (36, '21:00', '23:00', 'Primavera Sound', 2026, '2026-06-13', 'Xutos & Pontapes');
+(25, '16:00', '17:00', 'Luz do Atlantico', 2027, '2027-07-04', 'The Weeknd'),
+(26, '17:30', '18:30', 'Luz do Atlantico', 2027, '2027-07-04', 'Ana Moura'),
+(27, '19:00', '20:00', 'Luz do Atlantico', 2027, '2027-07-04', 'Imagine Dragons'),
+
+-- Ritmos da Serra - Edicao 2027
+(28, '21:00', '23:00', 'Ritmos da Serra', 2027, '2027-08-06', 'Dua Lipa'),
+(29, '16:00', '17:00', 'Ritmos da Serra', 2027, '2027-08-06', 'Calema'),
+(30, '17:30', '18:30', 'Ritmos da Serra', 2027, '2027-08-06', 'Mariza'),
+
+(31, '19:00', '20:00', 'Ritmos da Serra', 2027, '2027-08-07', 'Burna Boy'),
+(32, '21:00', '23:00', 'Ritmos da Serra', 2027, '2027-08-07', 'Coldplay'),
+(33, '16:00', '17:00', 'Ritmos da Serra', 2027, '2027-08-07', 'Ed Sheeran'),
+
+(34, '17:30', '18:30', 'Ritmos da Serra', 2027, '2027-08-08', 'Carolina Deslandes'),
+(35, '19:00', '20:00', 'Ritmos da Serra', 2027, '2027-08-08', 'Billie Eilish'),
+(36, '21:00', '23:00', 'Ritmos da Serra', 2027, '2027-08-08', 'Xutos & Pontapes');
