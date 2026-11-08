@@ -1,4 +1,3 @@
-
 -- =====================================================
 -- BD Projeto E2 - Grupo 20
 -- Testes das Restricoes de Integridade
@@ -9,17 +8,23 @@
 -- Os testes devem ser executados individualmente.
 
 
--- 01 - TESTES DOS FESTIVAIS
--- ==================================================
 
+-- =====================================================
+-- BD Projeto E2 - Grupo 20
+-- Modulo 01: Testes das Restricoes
+-- Festivais
+-- =====================================================
 
 -- Teste 1: PRIMARY KEY Festival
+-- Erro esperado: pk_festival.
+
 INSERT INTO Festival (nome, ano_criacao)
 VALUES ('Sons do Tejo', 2014);
 
 
+-- Teste 2: CHECK Recinto - Capacidade invalida
+-- Erro esperado: ck_recinto_capacidade.
 
--- Teste 2: CHECK Recinto
 INSERT INTO Recinto (
     nome,
     capacidade_max
@@ -30,8 +35,9 @@ VALUES (
 );
 
 
--- ==================================================
 -- Teste 3: FOREIGN KEY Edicao -> Festival
+-- Erro esperado: fk_edicao_festival.
+
 INSERT INTO Edicao (
     nome_festival,
     ano,
@@ -42,12 +48,12 @@ VALUES (
     'Festival Inexistente',
     2027,
     100.00,
-    'Parque Tejo'
+    'Parque Ribeirinho'
 );
 
 
--- ==================================================
 -- Teste 4: FOREIGN KEY Edicao -> Recinto
+-- Erro esperado: fk_edicao_recinto.
 
 INSERT INTO Edicao (
     nome_festival,
@@ -63,8 +69,8 @@ VALUES (
 );
 
 
--- ==================================================
--- Teste 5: CHECK Edicao
+-- Teste 5: CHECK Edicao - Preco invalido
+-- Erro esperado: ck_edicao_preco.
 
 INSERT INTO Edicao (
     nome_festival,
@@ -80,8 +86,9 @@ VALUES (
 );
 
 
--- ==================================================
 -- Teste 6: FOREIGN KEY Dia -> Edicao
+-- Erro esperado: fk_dia_edicao.
+
 INSERT INTO Dia (
     nome_festival,
     ano_edicao,
@@ -96,8 +103,8 @@ VALUES (
 );
 
 
--- ==================================================
--- Teste 7: CHECK Dia
+-- Teste 7: CHECK Dia - Preco invalido
+-- Erro esperado: ck_dia_preco.
 
 INSERT INTO Dia (
     nome_festival,
@@ -110,6 +117,220 @@ VALUES (
     2027,
     '2027-06-21',
     0
+);
+
+
+-- Teste 8: PRIMARY KEY Recinto
+-- Erro esperado: pk_recinto.
+
+INSERT INTO Recinto (
+    nome,
+    capacidade_max
+)
+VALUES (
+    'Parque Ribeirinho',
+    18000
+);
+
+
+-- Teste 9: PRIMARY KEY Edicao
+-- Erro esperado: pk_edicao.
+
+INSERT INTO Edicao (
+    nome_festival,
+    ano,
+    preco_passe,
+    nome_recinto
+)
+VALUES (
+    'Sons do Tejo',
+    2026,
+    98.00,
+    'Quinta das Fontes'
+);
+
+
+-- Teste 10: PRIMARY KEY Dia
+-- Erro esperado: pk_dia.
+
+INSERT INTO Dia (
+    nome_festival,
+    ano_edicao,
+    data,
+    preco_diario
+)
+VALUES (
+    'Sons do Tejo',
+    2026,
+    '2026-06-19',
+    36.00
+);
+
+
+
+-- =====================================================
+-- BD Projeto E2 - Grupo 20
+-- Modulo 02: Testes das Restricoes
+-- Artistas e Concertos
+-- =====================================================
+
+-- Teste 1: RIA-2 - Horario invalido
+-- Erro esperado: ck_concerto_horas.
+
+INSERT INTO Concerto (
+    id_concerto,
+    hora_inicio,
+    hora_fim,
+    nome_festival,
+    ano_edicao,
+    data,
+    nome_artista
+)
+VALUES (
+    100,
+    '22:00',
+    '20:00',
+    'Sons do Tejo',
+    2026,
+    '2026-06-19',
+    'Ana Moura'
+);
+
+
+-- Teste 2: RIA-3 - Tipo de artista invalido
+-- Erro esperado: ck_artista_tipo.
+
+INSERT INTO Artista (
+    nome,
+    genero_musical,
+    tipo
+)
+VALUES (
+    'Artista Teste',
+    'Pop',
+    'banda'
+);
+
+
+-- Teste 3: PRIMARY KEY Artista
+-- Erro esperado: pk_artista.
+
+INSERT INTO Artista (
+    nome,
+    genero_musical,
+    tipo
+)
+VALUES (
+    'Ana Moura',
+    'Fado',
+    'artista'
+);
+
+
+-- Teste 4: PRIMARY KEY Concerto
+-- Erro esperado: pk_concerto.
+
+INSERT INTO Concerto (
+    id_concerto,
+    hora_inicio,
+    hora_fim,
+    nome_festival,
+    ano_edicao,
+    data,
+    nome_artista
+)
+VALUES (
+    1,
+    '16:00',
+    '17:00',
+    'Sons do Tejo',
+    2026,
+    '2026-06-19',
+    'Ana Moura'
+);
+
+
+-- Teste 5: FOREIGN KEY Concerto -> Dia
+-- Erro esperado: fk_concerto_dia.
+
+INSERT INTO Concerto (
+    id_concerto,
+    hora_inicio,
+    hora_fim,
+    nome_festival,
+    ano_edicao,
+    data,
+    nome_artista
+)
+VALUES (
+    101,
+    '16:00',
+    '17:00',
+    'Sons do Tejo',
+    2026,
+    '2099-01-01',
+    'Ana Moura'
+);
+
+
+-- Teste 6: FOREIGN KEY Concerto -> Artista
+-- Erro esperado: fk_concerto_artista.
+
+INSERT INTO Concerto (
+    id_concerto,
+    hora_inicio,
+    hora_fim,
+    nome_festival,
+    ano_edicao,
+    data,
+    nome_artista
+)
+VALUES (
+    102,
+    '16:00',
+    '17:00',
+    'Sons do Tejo',
+    2026,
+    '2026-06-19',
+    'Artista Inexistente'
+);
+
+
+-- Teste 7: NOT NULL - Tipo obrigatorio
+-- Erro esperado: valor nulo na coluna tipo.
+
+INSERT INTO Artista (
+    nome,
+    genero_musical,
+    tipo
+)
+VALUES (
+    'Artista Sem Tipo',
+    'Pop',
+    NULL
+);
+
+
+-- Teste 8: NOT NULL - Hora de inicio obrigatoria
+-- Erro esperado: valor nulo na coluna hora_inicio.
+
+INSERT INTO Concerto (
+    id_concerto,
+    hora_inicio,
+    hora_fim,
+    nome_festival,
+    ano_edicao,
+    data,
+    nome_artista
+)
+VALUES (
+    103,
+    NULL,
+    '18:00',
+    'Sons do Tejo',
+    2026,
+    '2026-06-19',
+    'Ana Moura'
 );
 
 
