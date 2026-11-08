@@ -51,4 +51,9 @@ CREATE TABLE BilheteDiario (
         FOREIGN KEY (data_dia) 
         REFERENCES Dia(data) 
         ON DELETE RESTRICT 
+<<<<<<< Updated upstream
         ON UPDATE CASCADE
+=======
+        ON UPDATE CASCADE
+);
+>>>>>>> Stashed changes
