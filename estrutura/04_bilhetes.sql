@@ -17,7 +17,7 @@ CREATE TABLE Bilhete (
         ON DELETE SET NULL 
         ON UPDATE CASCADE,
     CONSTRAINT ck_bilhete_preco_positivo 
-        CHECK (preco_pago > 0) -- RIA-12
+        CHECK (preco_pago > 0)
 );
 
 CREATE TABLE PasseGeral (
