@@ -12,11 +12,9 @@ CREATE TABLE Artista (
 );
 
 
--- =========================================
 -- 2. Tabela Concerto
 -- RIA-2: A hora de início deve ser anterior
 -- à hora de fim
--- =========================================
 
 CREATE TABLE Concerto (
     id_concerto INTEGER NOT NULL,
