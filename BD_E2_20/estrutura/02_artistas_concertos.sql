@@ -26,6 +26,9 @@ VALUES (
 
 -- RIA-3: tipo deve ser 'artista' ou 'grupo'
 -- Resultado esperado: ERRO
+-- 2. Tabela Concerto
+-- RIA-2: A hora de início deve ser anterior
+-- à hora de fim
 
 INSERT INTO Artista (nome, genero_musical, tipo)
 VALUES ('Artista Teste', 'Pop', 'banda');
