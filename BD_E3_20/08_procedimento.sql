@@ -12,7 +12,7 @@
 -- Se alguma condição falhar, deve ser lançada uma exceção
 -- com uma mensagem que a identifique; caso contrário,
 -- o bilhete é inserido e o seu identificador é devolvido
--- em p_id_bilhete.
+-- em p_id_bilhete.f
 
 CREATE OR REPLACE PROCEDURE comprar_bilhete(
     p_comprador VARCHAR,
